@@ -1,0 +1,17 @@
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo">Valor</th>
+    <th class="tabela__cabecalho__conteudo">Destino</th>
+    <th class="tabela__cabecalho__conteudo">Data</th>
+  </thead>
+  <tbody>
+    <tr class="tabela__linha" *ngFor="let transferencia of transferencias">
+      <td class="tabela__conteu'do">{{transferencia.valor | currency }}</td>
+      <td class="tabela__conteudo">{{transferencia.destino}}</td>
+      <td class="tabela__conteudo">{{transferencia.data | date: "shortDate" }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
