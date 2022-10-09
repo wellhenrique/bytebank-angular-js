@@ -1,0 +1,14 @@
+FROM node:16.13.0-alpine as base
+
+WORKDIR /usr/bytebank/
+RUN touch /usr/bytebank/.env
+COPY package.json yarn.lock tsconfig.json ./
+RUN yarn
+
+COPY ./src ./src
+
+FROM base as development
+
+ENV NODE_ENV=development
+
+FROM base as build

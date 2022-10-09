@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  bytebank:
+    build:
+      target: development
+    volumes:
+      - ../src:/usr/bytebank/src
+      - ../.env:/usr/bytebank/.env
+    command: yarn start:dev
+    networks:
+      - apps_network
+
+networks:
+  apps_network:
+    driver: bridge
